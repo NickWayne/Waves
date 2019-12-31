@@ -1,12 +1,12 @@
 import pygame,random,math
 
 rands = 50
-# max = (0,0,0)
-# min = (255,0,0)
+max = (232, 148, 151)
+min = (84, 138, 155)
 # max = (0,0,0)
 # min = (0,0,255)
-min = (238, 238, 0)
-max = (0, 255, 0)
+# max = (0, 0, 0)
+# min = (0, 255, 0)
 SIZE = (640,480)
 class ocean (object):
 
@@ -43,6 +43,14 @@ class ocean (object):
                     b = (pts[1].color[2]+pts[2].color[2]+pts[3].color[2])/3
                     color = (r,g,b)
                     pygame.draw.polygon(surface,color,(pts[1].loc,pts[2].loc,pts[3].loc))
+                    # pygame.draw.circle(surface, color, (int(
+                    #     pts[0].loc[0]), int(pts[0].loc[1])), 1)
+                    # pygame.draw.circle(surface, color, (int(
+                    #     pts[1].loc[0]), int(pts[1].loc[1])), 1)
+                    # pygame.draw.circle(surface, color, (int(
+                    #     pts[2].loc[0]), int(pts[2].loc[1])), 1)
+                    # pygame.draw.circle(surface, color, (int(
+                    #     pts[3].loc[0]), int(pts[3].loc[1])), 1)
                     # pygame.draw.line(surface,(255,0,0),pts[1].loc,pts[2].loc,5)
                     self.dire = not self.dire
                 elif self.dire == False:
@@ -61,6 +69,14 @@ class ocean (object):
                     b = (pts[1].color[2]+pts[2].color[2]+pts[3].color[2])/3
                     color = (r,g,b)
                     pygame.draw.polygon(surface,color,(pts[1].loc,pts[2].loc,pts[3].loc))
+                    # pygame.draw.circle(surface, color, (int(
+                    #     pts[0].loc[0]), int(pts[0].loc[1])), 1)
+                    # pygame.draw.circle(surface, color, (int(
+                    #     pts[1].loc[0]), int(pts[1].loc[1])), 1)
+                    # pygame.draw.circle(surface, color, (int(
+                    #     pts[2].loc[0]), int(pts[2].loc[1])), 1)
+                    # pygame.draw.circle(surface, color, (int(
+                    #     pts[3].loc[0]), int(pts[3].loc[1])), 1)
                     # pygame.draw.line(surface,(255,255,0),pts[1].loc,pts[2].loc,5)
                     self.dire = not self.dire
 
@@ -96,7 +112,8 @@ class point (object):
 
     def redo_mult(self,delta):
         self.loc = self.loc_base
-        self.mult = (math.cos(self.x / 2 + delta / 2) + math.sin(self.y - delta * 2)) * .5 * rands
+        self.mult = (math.cos(self.x / 2 + delta / 2) +
+                     math.sin(self.y - delta * 2)) * .5 * rands
         # self.height_mult = -20
         self.loc = (self.loc[0],self.loc[1]+self.mult)
 
