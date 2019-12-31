@@ -1,0 +1,10 @@
+                            ****WAVES****
+
+self.height_mult = (math.cos(self.x + delta) + math.sin(self.y + delta )) * .5 * amplitude
+
+self.height_mult = (math.cos(self.x / 2 + delta / 2) + math.sin(self.y - delta * 2)) * .5 * amplitude
+
+freq = 10
+self.height_mult = (math.cos(self.x / 2 + delta / 2) + math.sin(self.y - delta * freq)) * .5 * amplitude
+
+self.height_mult = (math.cos(40*math.sqrt(self.x**2+delta**2))) * .5 * amplitude
